@@ -30,14 +30,12 @@ const coInputTxtEl = document.querySelectorAll('.co_input_txt');
 function renderStateOps(event) {
 	event.preventDefault()
 	for (let i = 0; i < stateDropdownEl.length; i++) {
-		// console.log(stateDropdownEl[i]);
-		for (let j = 0; j < stateAbbrvArray.length; j++) {
+
+		for ( let j = 0; j < stateAbbrvArray.length; j++ ) {
 
 			let stOptions = document.createElement('a');
 			stOptions.setAttribute('class', 'dropdown-item');
 			stOptions.setAttribute('href', '#');
-			// stOptions.setAttribute('data-boundary', 'scrollParent');
-			// stOptions.setAttribute('data-state', stateAbbrvArray[j]);
 			stOptions.textContent = stateAbbrvArray[j];
 
 			stOptions.addEventListener('click', function (event) {
@@ -45,7 +43,7 @@ function renderStateOps(event) {
 				let stateSelected = event.target.textContent;
 				event.target.parentNode.previousSibling.previousSibling.innerHTML = stateSelected;
 			})
-			// return stateSelected;
+			// Return stateSelected;
 			stateDropdownEl[i].appendChild(stOptions);
 		}
 	}
@@ -57,14 +55,8 @@ function renderStateOps(event) {
 			let savedStateInfo = event.target.offsetParent.children[1].childNodes[1][i].textContent;
 			localStorage.setItem('stateItem-' + i, savedStateInfo);
 		}
+
 		location.href = 'develop/html/results.html';
-
-		// saveStatesSelected.forEach(function (userState, index) {
-
-		// Call function to render search history within this function for access to needed variables
-		// savedSearchArray.push(userInput);
-
-		// renderSearchHistory();
 	});
 
 }
@@ -78,7 +70,6 @@ function renderCountyOps() {
 			let coStOptions = document.createElement('a');
 			coStOptions.setAttribute('class', 'dropdown-item');
 			coStOptions.setAttribute('href', '#');
-			// coStOptions.setAttribute('data-state', stateAbbrvArray[i])
 			coStOptions.textContent = stateAbbrvArray[j];
 
 			coStateDropdownEl[i].appendChild(coStOptions);
@@ -104,13 +95,11 @@ function renderCountyOps() {
 						coOptions.setAttribute('class', 'dropdown-item');
 						coOptions.setAttribute('href', '#');
 						coOptions.textContent = counties[k];
-						// console.log(countyDropdownEl, i)
 						countyDropdownEl[i].appendChild(coOptions);
 
 						coOptions.addEventListener('click', function (event) {
 
 							let countySelected = event.target.textContent;
-							// coInputTxtEl.innerHTML = countySelected;
 							event.target.parentNode.previousSibling.previousSibling.innerHTML = countySelected;
 						})
 					}
@@ -128,10 +117,9 @@ function renderCountyOps() {
 			let savedCountyInfo = event.target.offsetParent.children[1].childNodes[1][m].textContent;
 			localStorage.setItem('countyItem-' + m, savedCountyInfo);
 		}
+
 		location.href = 'develop/html/results.html';
-		// Call function to render search history within this function for access to needed variables
-		// savedSearchArray.push(userInput);
-		// renderSearchHistory();
+
 	});
 };
 
