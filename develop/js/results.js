@@ -71,21 +71,20 @@ function grabCountyData(stateTarget , countyTarget) {
 		// Unused at the moment
 		// let countyVaccinesDistributed = dataObj[0].actuals.vaccinesDistributed;
 
-
-		//ICU beds
+		// ICU Beds
 		let countyICUCapacity = dataObj[0].actuals.icuBeds.capacity;
 		let countyICUCovidUsage = dataObj[0].actuals.icuBeds.currentUsageCovid;
 		let countyICUTotalUsage = dataObj[0].actuals.icuBeds.currentUsageTotal;
 		let countyAvailableBeds = countyICUCapacity - countyICUTotalUsage;
 		let countyNonCovidBeds = countyICUTotalUsage - countyICUCovidUsage;
 
-		//riskLevel
+		// Risk Level
 		let countyRiskLevel = dataObj[0].riskLevels.overall
 		console.log('County Risk Level ' + countyRiskLevel)
 
 
-	//DOM Manipulation Here
-		// creating +appending information sections to cards
+	// DOM Manipulation Here
+		// Create + append information sections to cards
 		let countyCardEL = document.createElement('div');
 		countyCardEL.setAttribute('class', 'state-card-div');
 		countyCardEL.setAttribute('id', '');
@@ -114,7 +113,7 @@ function grabCountyData(stateTarget , countyTarget) {
 		statsWrapper.appendChild(icuStatsDiv);
 		resultsContainer.appendChild(countyCardEL);
 
-		//header section w/ population
+		// Header section w/ population
 		let countyNameEl = document.createElement('h3');
 		countyNameEl.setAttribute('class', 'state-name-card-header');
 		countyNameEl.setAttribute('id', '');
@@ -126,14 +125,14 @@ function grabCountyData(stateTarget , countyTarget) {
 		populationEl.textContent = "Population: " + countyPopulation;
 		cardHeader.appendChild(populationEl);
 
-		// general stats card section
+		// General stats card section
 		let generalStatsTitle = document.createElement('h3');
 		generalStatsTitle.setAttribute('class', 'gen-stats-header');
 		generalStatsTitle.setAttribute('id', '');
 		generalStatsTitle.textContent = "General Stats";
 		generalStatsDiv.appendChild(generalStatsTitle);
 
-		// daily stats container + info
+		// Daily stats container + info
 		let dailyStatsDiv = document.createElement('div');
 		dailyStatsDiv.setAttribute('class', "daily-stats");
 		dailyStatsDiv.setAttribute('id', '');
@@ -147,7 +146,7 @@ function grabCountyData(stateTarget , countyTarget) {
 		newDeathsEl.textContent = "New Deaths: " + countyDailyDeaths;
 		dailyStatsDiv.appendChild(newDeathsEl);
 
-		// total stats container + info
+		// Total stats container + info
 		let totalStatsDiv = document.createElement('div');
 		totalStatsDiv.setAttribute('class', "total-stats");
 		generalStatsDiv.appendChild(totalStatsDiv);
@@ -158,7 +157,7 @@ function grabCountyData(stateTarget , countyTarget) {
 		totalDeathsEl.textContent = "Total Deaths: " + countyTotalDeaths;
 		totalStatsDiv.appendChild(totalDeathsEl);
 
-		// infection rate container and statistics
+		// Infection rate container + stats
 		let infectionRateDiv = document.createElement('div');
 		infectionRateDiv.setAttribute('class', "total-stats");
 		generalStatsDiv.appendChild(infectionRateDiv);
@@ -166,7 +165,7 @@ function grabCountyData(stateTarget , countyTarget) {
 		infectionRateEl.textContent = "Infection Rate: " + countyInfectionRate;
 		infectionRateDiv.appendChild(infectionRateEl);
 
-		// risk level Section
+		// Risk level section
 		let riskLevelTitle = document.createElement('h3');
 		riskLevelTitle.textContent = "Risk Level";
 		riskLevelDiv.appendChild(riskLevelTitle);
@@ -175,8 +174,7 @@ function grabCountyData(stateTarget , countyTarget) {
 		riskDisplayWrapper.style.display ='flex';
 		riskLevelDiv.appendChild(riskDisplayWrapper);
 
-		// for loop creating + appending the risk levels display's divs
-		//TODO: use CSS to style!
+		// Create + append the risk levels display's divs using 'for loop'
 		for (let i = 5; i > 0; i--) {
 			let riskDisplay = document.createElement('div');
 			riskDisplay.setAttribute("class", "riskLevel-" + i);
@@ -184,13 +182,13 @@ function grabCountyData(stateTarget , countyTarget) {
 			riskDisplayWrapper.appendChild(riskDisplay);
 		};
 
-		// risk level describing text
+		// Risk level describing text
 		let riskLevelDescEl = document.createElement('h3');
 		riskLevelDiv.appendChild(riskLevelDescEl);
 		let riskLevelTxtEl = document.createElement('p');
 		riskLevelDiv.appendChild(riskLevelTxtEl);
 
-		// If statement to determine display bordering in css + text risk level text
+		// Determine display bordering in css + text risk level text using 'if statement'
 		if (countyRiskLevel == 5) {
 			riskLevelDescEl.textContent = "Severe outbreak";
 			riskLevelTxtEl.textContent = countyTarget + " is currently experiencing a severe outbreak. Take all possible precautions to avoid exposure."
@@ -222,12 +220,12 @@ function grabCountyData(stateTarget , countyTarget) {
 			riskDisplaySelected.setAttribute('class', 'selected-level riskLevel-1');
 		};
 
-		// vaccination section
+		// Vaccination section
 		let vaccinationTitle = document.createElement('h3');
 		vaccinationTitle.textContent = "Vaccinations";
 		vaccineStatsDiv.appendChild(vaccinationTitle);
 
-		//  vaccination progress bars
+		// Vaccination progress bars
 		let completedContainer = document.createElement('div');
 		completedContainer.setAttribute('class', 'completed');
 		vaccineStatsDiv.appendChild(completedContainer);
@@ -265,22 +263,23 @@ function grabCountyData(stateTarget , countyTarget) {
 		initiatedProgress.style.width = countyInitiatedNum;
 		initiatedProgressBar.appendChild(initiatedProgress);
 
-		// icu section
+		// ICU section // *check punctuantion
 		let icuTitle = document.createElement('h3');
 		icuTitle.textContent = 'ICU Beds'
 		icuStatsDiv.appendChild(icuTitle);
 		var chartContainer = document.createElement('canvas')
 		chartContainer.setAttribute('id', 'myChart')
 		chartContainer.getContext('2d')
-		icuStatsDiv.appendChild(chartContainer);
-		//graph.js chart
+		icuStatsDiv.appendChild( chartContainer );
+
+		// Graph.js chart
 		var icuDonutChart = new Chart(chartContainer, {
 			type: 'doughnut',
 			data: {
 				labels: ['Available Beds', 'Non-Covid Beds', 'Covid Beds'],
 				datasets: [{
 					label: 'Points',
-					// can change colors here
+					// Change colors here
 					backgroundColor: ['Green', 'Yellow', 'Red'],
 					borderColor: ['Green', 'Yellow', 'Red'],
 					borderWidth: 2,
@@ -305,31 +304,33 @@ function grabStateData(target) {
 	}).then((data) => {
 		return data.find((el) => el.state === target);
 	}).then((dataObj) => {
-		console.log(dataObj)
+		console.log( dataObj )
+
 		// STATISTICS
-		// total stats
+
+		// Total stats
 		let totalCases = dataObj.actuals.cases;
 		let totalDeaths = dataObj.actuals.deaths;
 
-		// daily cases per 100k
+		// Daily cases per 100k
 		let dailyCases = dataObj.actuals.newCases;
 		let dailyDeaths = dataObj.actuals.newDeaths;
 
-		// infection rate rounded up to hundreths
+		// Infection rate rounded up to hundreths
 		let infectionRate = (dataObj.metrics.infectionRate).toFixed(2);
 
-		// population
+		// Population
 		let population = dataObj.population
 
-		// vaccination stats should display based on population
+		// Vaccination stats should display based on population
 		let vaccinesCompleted = dataObj.actuals.vaccinationsCompleted;
 		let vaccinesInitiated = dataObj.actuals.vaccinationsInitiated;
 
-		// vaccination percentages
+		// Vaccination percentages
 		let vaccinesCompletedNum = (((vaccinesCompleted) / population) * 100).toFixed(1) + '%';
 		let vaccinesInitiatedNum = (((vaccinesInitiated) / population) * 100).toFixed(1) + '%';
 
-		// distribution's unused for now
+		// Distribution's unused for now
 		let vaccinesDistributed = dataObj.actuals.vaccinesDistributed;
 
 		// ICU beds
@@ -339,11 +340,11 @@ function grabStateData(target) {
 		let ICUAvailableBeds = ICUCapacity - ICUTotalUsage;
 		let ICUNonCovidBeds = ICUTotalUsage - ICUCovidUsage;
 
-		// riskLevel
+		// Risk level
 		let riskLevel = dataObj.riskLevels.overall
 
 	//DOM Manipulation Here
-		// creating +appending information sections to cards
+		// Create + Append information sections to cards
 		let stateCardEL = document.createElement('div');
 		stateCardEL.setAttribute('class', 'state-card-div');
 		stateCardEL.setAttribute('id', '');
@@ -372,7 +373,7 @@ function grabStateData(target) {
 		statsWrapper.appendChild(icuStatsDiv);
 		resultsContainer.appendChild(stateCardEL);
 
-		//header section w/ population
+		// Header section w/ population
 		let stateNameEl = document.createElement('h3');
 		stateNameEl.setAttribute('class', 'state-name-card-header');
 		stateNameEl.setAttribute('id', '');
@@ -386,14 +387,14 @@ function grabStateData(target) {
 		populationEl.textContent = "Population: " + population;
 		cardHeader.appendChild(populationEl);
 
-		// general stats card section
+		// General stats card section
 		let generalStatsTitle = document.createElement('h3');
 		generalStatsTitle.setAttribute('class', 'gen-stats-header');
 		generalStatsTitle.setAttribute('id', '');
 		generalStatsTitle.textContent = "General Stats";
 		generalStatsDiv.appendChild(generalStatsTitle);
 
-		// daily stats container + info
+		// Daily stats container + info
 		let dailyStatsDiv = document.createElement('div');
 		dailyStatsDiv.setAttribute('class', "daily-stats");
 		dailyStatsDiv.setAttribute('id', '');
@@ -407,7 +408,7 @@ function grabStateData(target) {
 		newDeathsEl.textContent = "New Deaths: " + dailyDeaths;
 		dailyStatsDiv.appendChild(newDeathsEl);
 
-		// total stats container + info
+		// Total stats container + info
 		let totalStatsDiv = document.createElement('div');
 		totalStatsDiv.setAttribute('class', "total-stats");
 		generalStatsDiv.appendChild(totalStatsDiv);
@@ -418,7 +419,7 @@ function grabStateData(target) {
 		totalDeathsEl.textContent = "Total Deaths: " + totalDeaths;
 		totalStatsDiv.appendChild(totalDeathsEl);
 
-		// infection rate container and statistics
+		// Infection rate container and statistics
 		let infectionRateDiv = document.createElement('div');
 		infectionRateDiv.setAttribute('class', "total-stats");
 		generalStatsDiv.appendChild(infectionRateDiv);
@@ -426,7 +427,7 @@ function grabStateData(target) {
 		infectionRateEl.textContent = "Infection Rate: " + infectionRate;
 		infectionRateDiv.appendChild(infectionRateEl);
 
-		// risk level Section
+		// Risk level section
 		let riskLevelTitle = document.createElement('h3');
 		riskLevelTitle.textContent = "Risk Level";
 		riskLevelDiv.appendChild(riskLevelTitle);
@@ -435,20 +436,20 @@ function grabStateData(target) {
 		riskDisplayWrapper.style.display = 'flex';
 		riskLevelDiv.appendChild(riskDisplayWrapper);
 
-		// for loop creating + appending the risk levels display's divs
+		// Create + append the risk levels display's divs using 'for loop'
 		for (let i = 5; i > 0; i--) {
 			let riskDisplay = document.createElement('div');
 			riskDisplay.setAttribute("class", "riskLevel-" + i);
 			riskDisplay.setAttribute("id", "level-" + i + '-' + target);
 			riskDisplayWrapper.appendChild(riskDisplay);
 		};
-		// risk level describing text
+		// Risk level describing text
 		let riskLevelDescEl = document.createElement('h3');
 		riskLevelDiv.appendChild(riskLevelDescEl);
 		let riskLevelTxtEl = document.createElement('p');
 		riskLevelDiv.appendChild(riskLevelTxtEl);
 
-		// If statement to determine display bordering in css + text risk level text
+		// Determine display bordering in css + text risk level text using 'if statement'
 		if (riskLevel == 5) {
 			riskLevelDescEl.textContent = "Severe outbreak";
 			riskLevelTxtEl.textContent = stateNames[stateNum] + " is currently experiencing a severe outbreak. Take all possible precautions to avoid exposure."
@@ -480,12 +481,12 @@ function grabStateData(target) {
 			riskDisplaySelected.setAttribute('class', 'selected-level riskLevel-1');
 		};
 
-		// vaccination section
+		// Vaccination section
 		let vaccinationTitle = document.createElement('h3');
 		vaccinationTitle.textContent = "Vaccinations";
 		vaccineStatsDiv.appendChild(vaccinationTitle);
 
-		//  vaccination progress bars
+		//  Vaccination progress bars
 		let completedContainer = document.createElement('div');
 		completedContainer.setAttribute('class', 'completed');
 		vaccineStatsDiv.appendChild(completedContainer);
@@ -523,22 +524,23 @@ function grabStateData(target) {
 		initiatedProgress.style.width = vaccinesInitiatedNum;
 		initiatedProgressBar.appendChild(initiatedProgress);
 
-		// icu section
+		// ICU section
 		let icuTitle = document.createElement('h3');
 		icuTitle.textContent = 'ICU Beds'
 		icuStatsDiv.appendChild(icuTitle);
 		var chartContainer = document.createElement('canvas')
 		chartContainer.setAttribute('id', 'myChart')
 		chartContainer.getContext('2d')
-		icuStatsDiv.appendChild(chartContainer);
-		//chart.js doughnut chart
+		icuStatsDiv.appendChild( chartContainer );
+
+		// Chart.js doughnut chart
 		var icuDonutChart = new Chart(chartContainer, {
 			type: 'doughnut',
 			data: {
 				labels: ['Covid Beds', 'Non-Covid Beds', 'Available Beds'],
 				datasets: [{
 					label: 'Points',
-					// can change colors here
+					// Can change colors here
 					backgroundColor: ['Red', 'Yellow', 'Green'],
 					borderColor: ['Red', 'Yellow', 'Green'],
 					borderWidth: 2,
@@ -580,7 +582,7 @@ returnButton.addEventListener('click', function(event){
 })
 
 // removeSavedStateInfo();
-// removeSavedCountyInfo()
+// removeSavedCountyInfo();
 determineDataPath();
 // grabCountyInputs();
 // grabStateInputs();
