@@ -102,7 +102,7 @@ section#results{
     padding: 0;
 }
 
-/*results.js set attribute */
+/* results.js set attribute */
 
 .state-card-div{
     /* box-shadow: 3px 3px 2px #2cbdf68c; */
@@ -331,7 +331,6 @@ section#results{
 
 .initiated{
     padding-top: 10px;
-
     color:var(--secondary-txt);
 }
 
@@ -368,7 +367,6 @@ section#results{
     background-color: red;
     height:24px;
     width: 180px;
-
 }
 
 .initiatedProgress{
@@ -449,7 +447,6 @@ Secondly padding inside individual cards i.e  for the icu card (padding: 20px 0 
         margin: 0;
         width: 100%;
         padding: 20px 20px 20px 20px;
-
     }
 
     .risk-level-div{
@@ -459,7 +456,6 @@ Secondly padding inside individual cards i.e  for the icu card (padding: 20px 0 
         margin: 0;
         width: 100%;
         padding: 20px 20px 20px 20px;
-
     }
 
     .vaccine-stats-div{
