@@ -61,15 +61,11 @@ function grabCountyData(stateTarget , countyTarget) {
 		// Population
 		let countyPopulation = dataObj[0].population;
 
-
 		// Vaccination stats should display based on population
 		let countyVaccinesCompleted = dataObj[0].actuals.vaccinationsCompleted;
 		let countyCompletedNum = (((countyVaccinesCompleted) / countyPopulation) * 100).toFixed(1) + '%';
 		let countyVaccinesInitiated = dataObj[0].actuals.vaccinationsInitiated;
 		let countyInitiatedNum = (((countyVaccinesInitiated) / countyPopulation) * 100).toFixed(1) + '%';
-
-		// Unused at the moment
-		// let countyVaccinesDistributed = dataObj[0].actuals.vaccinesDistributed;
 
 		// ICU Beds
 		let countyICUCapacity = dataObj[0].actuals.icuBeds.capacity;
@@ -263,7 +259,7 @@ function grabCountyData(stateTarget , countyTarget) {
 		initiatedProgress.style.width = countyInitiatedNum;
 		initiatedProgressBar.appendChild(initiatedProgress);
 
-		// ICU section // *check punctuantion
+		// ICU section
 		let icuTitle = document.createElement('h3');
 		icuTitle.textContent = 'ICU Beds'
 		icuStatsDiv.appendChild(icuTitle);
@@ -581,8 +577,4 @@ returnButton.addEventListener('click', function(event){
 
 })
 
-// removeSavedStateInfo();
-// removeSavedCountyInfo();
 determineDataPath();
-// grabCountyInputs();
-// grabStateInputs();
