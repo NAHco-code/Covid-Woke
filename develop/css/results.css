@@ -338,7 +338,6 @@ section#results{
     color: var(--secondary-txt);
 }
 
-
 /* Vaccine progress bars */
 .completedBar{
     border-radius: 40px;
@@ -413,6 +412,9 @@ footer div :nth-child(3){
 }
 
 /* Media queries */
+/* Media breakpoint #1 @ 1420, look to remove padding between cards first.
+Secondly padding inside individual cards i.e  for the icu card (padding: 20px 0 0 20px;)
+*/
 @media screen and (max-width: 1586px) {
     .state-card-div{
         padding-left: 1%;
