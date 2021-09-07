@@ -1,4 +1,4 @@
-//TODO: check to see if these can be changed to const
+//TODO: check let v const
 let apiKey = '74f4b9b4d698466e88f0f73ba927478d';
 let stateUrl = 'https://api.covidactnow.org/v2/states.json?apiKey=' + apiKey;
 let stateAbbrvArray = ["AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"];
@@ -20,13 +20,13 @@ const countyDropdownEl = document.querySelectorAll('.county-dropdown');
 const coStInputTxtEl = document.querySelectorAll('.co_state_input_txt');
 const coInputTxtEl = document.querySelectorAll('.co_input_txt');
 
-// on click of state and couty modals
-// use state abbrev variable to populate state dropdowns
+// On click of state and couty modals
+// Use state abbrev variable to populate state dropdowns
 
-// couty dropdown options
-// state selected is state value for county dropdown
+// Couty dropdown options
+// State selected is state value for county dropdown
 
-// event listeners for state and county modals
+// Event listeners for state and county modals
 function renderStateOps(event) {
 	event.preventDefault()
 	for (let i = 0; i < stateDropdownEl.length; i++) {
@@ -49,7 +49,7 @@ function renderStateOps(event) {
 			stateDropdownEl[i].appendChild(stOptions);
 		}
 	}
-	// event listener for SUBMIT STATE modal
+	// Event listener for SUBMIT STATE modal
 	stSubmitBtnEl.addEventListener('click', function (event) {
 
 
@@ -61,7 +61,7 @@ function renderStateOps(event) {
 
 		// saveStatesSelected.forEach(function (userState, index) {
 
-		// call function to render search history within this function for access to needed variables
+		// Call function to render search history within this function for access to needed variables
 		// savedSearchArray.push(userInput);
 
 		// renderSearchHistory();
@@ -93,11 +93,11 @@ function renderCountyOps() {
 					return response.json()
 				}).then((data) => {
 
-					// counties to populate dropdown
+					// Counties to populate dropdown
 					let counties = data.map((countyData) => countyData.county);
 					console.log(counties);
 
-					// append a tag as options for the dropdown
+					// Append a tag as options for the dropdown
 					for (let k = 0; k < counties.length; k++) {
 
 						let coOptions = document.createElement('a');
@@ -118,18 +118,18 @@ function renderCountyOps() {
 			})
 		}
 	}
-	// event listener SUBMIT COUNTY modal
+	// Event listener SUBMIT COUNTY modal
 	coSubmitBtnEl.addEventListener('click', function (event) {
 		event.preventDefault();
 
-		// use event to access user input
+		// Use event to access user input
 
 		for (let m = 0; m < 4; m++) {
 			let savedCountyInfo = event.target.offsetParent.children[1].childNodes[1][m].textContent;
 			localStorage.setItem('countyItem-' + m, savedCountyInfo);
 		}
 		location.href = 'develop/html/results.html';
-		// call function to render search history within this function for access to needed variables
+		// Call function to render search history within this function for access to needed variables
 		// savedSearchArray.push(userInput);
 		// renderSearchHistory();
 	});
@@ -138,7 +138,7 @@ function renderCountyOps() {
 stSearchBtnEl.addEventListener('click', renderStateOps);
 coSearchBtnEl.addEventListener('click', renderCountyOps);
 
-// county/state search form
+// County/state search form
 $('#search-modal').on('show.bs.modal', function (event) {
 	var button = $(event.relatedTarget) // Button that triggered the modal
 	var countyState = button.data('whatever') // Extract info from data-* attributes
