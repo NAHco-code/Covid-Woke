@@ -45,7 +45,6 @@ header div.header_wrapper{
     color: var(--accent-color);
     font-size: 65px;
     font-weight: 500;
-    /* text-shadow: 3px 3px 5px rgba(72, 66, 75, 0.623); */
 }
 
 #woke-header-txt{
@@ -55,7 +54,6 @@ header div.header_wrapper{
     right: 70px;
     font-size: 50px;
     padding-bottom: 10px;
-    /* text-shadow: 3px 3px 5px rgba(72, 66, 75, 0.623); */
 }
 
 .return_button_wrapper{
@@ -105,17 +103,12 @@ section#results{
 /* results.js set attribute */
 
 .state-card-div{
-    /* box-shadow: 3px 3px 2px #2cbdf68c; */
     max-width: 48%;
     min-width: 320px;
     padding-right: 2%;
     padding-left: 2%;
     margin-bottom: 100px;
     margin-top:20px;
-    /*align-items: space-evenly;
-    justify-content: space-between; */
-    /* transition: all 0.3s ease;
-    box-shadow: opx 4px 8px 0 rgba(0,0,0,0.2); */
 }
 
 .card-header-div{
@@ -123,7 +116,6 @@ section#results{
     box-shadow: 3px 3px 4px 3px #2cbdf69c;
     display: flex;
     justify-content: space-evenly;
-    /* max-width: 640px; */
     padding: 10px;
     width: 100%;
     border-radius: 7px 7px 0 0;
@@ -247,7 +239,7 @@ section#results{
     color: var(--secondary-txt);
 }
 
-/* risk level displays div's styled here */
+/* Risk level charts */
 .risk-level-div h3{
     color: var(--primary-txt);
 }
@@ -313,7 +305,7 @@ section#results{
     z-index: 10;
 }
 
-/* VACCINATIONS STYLES */
+/* Vaccination charts */
 .completed{
     padding-top:12px;
     color:var(--secondary-txt);
@@ -347,7 +339,7 @@ section#results{
 }
 
 
-/* vaccine progress bars here */
+/* Vaccine progress bars */
 .completedBar{
     border-radius: 40px;
     background-color: red;
@@ -420,9 +412,7 @@ footer div :nth-child(3){
     margin-right:25px;
 }
 
-/* Media breakpoint #1 @ 1420, look to remove padding between cards first.
-Secondly padding inside individual cards i.e  for the icu card (padding: 20px 0 0 20px;)
-*/
+/* Media queries */
 @media screen and (max-width: 1586px) {
     .state-card-div{
         padding-left: 1%;
