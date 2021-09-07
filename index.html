@@ -23,6 +23,7 @@
         <hr class="mt-0 mb-0">
     </header>
     <main class="container-fluid" id="">
+
         <div class="mission_wrapper row">
             <div class="mission_header_wrapper col-lg-1 col-md-12 col-sm-12">
                 <h1 class="mission_header">Mission</h1>
@@ -38,7 +39,7 @@
         </div>
 
         <div class="travel_advisory_container row">
-            <!-- bootstrap alert for travel advisory / add alert message and cdc link etc-->
+            <!-- bootstrap alert for travel advisory -->
             <div class="alert alert-danger" role="alert">
                 Learn about <a href="https://www.cdc.gov/coronavirus/2019-ncov/travelers/travel-during-covid19.html" class="alert-link">CDC Travel</a> recommendations and tips to stay safe during the COVID-19 pandemic.
             </div>
@@ -46,23 +47,16 @@
 
         <div class="appreciation_box_wrapper row">
             <div class="background_img_screen col-sm-12">
-
                 <div class="search_bar_wrapper row">
-                    <!-- <div class="search_bar_text_wrapper">
-                                <p class="search_bar_text" id="search_county_text"></p>
-                            </div> -->
-
                     <div class="county_button_wrapper">
                         <button type="button" class="btn btn-primary custom-btn" id="search-state-btn" data-toggle="modal"
                             data-target="#state-modal" data-whatever="State">Search by State</button>
                     </div>
-
                     <div class="state_button_wrapper">
                         <button type="button" class="btn btn-primary custom-btn" id="search-county-btn" data-toggle="modal"
                             data-target="#county-modal" data-whatever="County">Search by County</button>
                     </div>
                 </div>
-
                 <div class="appreciation_text_wrapper">
                     <p class="appreciation_text" id="app_text_top">We Appreciate Our</p>
                     <br />
@@ -84,9 +78,9 @@
                     <a href='#'><i class="fab fa-linkedin-in symbol"></i></a>
                     <a href='#'><i class="fab fa-github symbol"></i></a>
                 </div>
-
             </div>
         </footer>
+
     </main>
 
     <!-- State Modal -->
@@ -98,7 +92,6 @@
                     <h5 class="modal-title" id="select-s-form">Select your State.</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-
                     </button>
                 </div>
                 <div class="modal-body">
@@ -115,11 +108,9 @@
                                     </button>
                                     <div class="dropdown-menu state-dropdown" id=""
                                         aria-labelledby="dropdownMenuButton">
-                                        <!-- <a class="dropdown-item" href="#">State</a>-->
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         <!-- SECOND SELECTION -->
                         <div class="form-group col">
@@ -133,47 +124,10 @@
                                     </button>
                                     <div class="dropdown-menu state-dropdown" id=""
                                         aria-labelledby="dropdownMenuButton">
-                                        <!-- <a class="dropdown-item" href="#">State</a>-->
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-                        <!-- THIRD SELECTION
-                        <div class="form-group col">
-                            <div class="">
-                                <label for="state-name-input" class="col-form-label"></label>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle state_input_txt" type="button"
-                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        State
-                                    </button>
-                                    <div class="dropdown-menu state-dropdown" id="" aria-labelledby="dropdownMenuButton"> -->
-                                        <!-- <a class="dropdown-item" href="#">State</a>-->
-                                    <!-- </div>
-                                </div>
-                            </div>
-
-                        </div> -->
-                        <!-- FOURTH SELECTION -->
-                        <!-- <div class="form-group col">
-                            <div class="">
-                                <label for="state-name-input" class="col-form-label"></label>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle state_input_txt" type="button"
-                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                        aria-expanded="false">
-                                        State
-                                    </button>
-                                    <div class="dropdown-menu state-dropdown" id="" aria-labelledby="dropdownMenuButton"> -->
-                                        <!-- <a class="dropdown-item" href="#">State</a>-->
-                                    <!-- </div>
-                                </div>
-                            </div>
-                        </div> -->
-
-
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -184,7 +138,6 @@
         </div>
     </div>
 
-
     <!-- County Modal -->
     <div class="modal fade custom-modal" id="county-modal" tabindex="-1" role="dialog"
         aria-labelledby="search-county-form" aria-hidden="true">
@@ -194,7 +147,6 @@
                     <h5 class="modal-title" id="select-c-form">Select your County.</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-
                     </button>
                 </div>
                 <div class="modal-body">
@@ -212,7 +164,6 @@
                                     </button>
                                     <div class="dropdown-menu co-state-dropdown" id=""
                                         aria-labelledby="dropdownMenuButton">
-                                        <!-- <a class="dropdown-item" href="#">State</a> -->
                                     </div>
                                 </div>
                             </div>
@@ -227,7 +178,6 @@
                                     </button>
                                     <div class="dropdown-menu county-dropdown" id=""
                                         aria-labelledby="dropdownMenuButton">
-                                        <!-- <a class="dropdown-item" href="#">County Name</a> -->
                                     </div>
                                 </div>
                             </div>
@@ -245,7 +195,6 @@
                                     </button>
                                     <div class="dropdown-menu co-state-dropdown" id=""
                                         aria-labelledby="dropdownMenuButton">
-                                        <!-- <a class="dropdown-item" href="#">State</a> -->
                                     </div>
                                 </div>
                             </div>
@@ -260,78 +209,10 @@
                                     </button>
                                     <div class="dropdown-menu county-dropdown" id=""
                                         aria-labelledby="dropdownMenuButton">
-                                        <!-- <a class="dropdown-item" href="#">County Name</a> -->
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- THIRD SELECTION -->
-                        <!-- <div class="form-group row">
-                            <div class="col">
-                                <label for="county-name-input" class="col-form-label"></label>
-                                <div class="dropdown">
-                                    <button
-                                        class="btn btn-secondary dropdown-toggle form-control mb-2 mr-sm-2 co_state_input_txt"
-                                        type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        State
-                                    </button>
-                                    <div class="dropdown-menu co-state-dropdown" id=""
-                                        aria-labelledby="dropdownMenuButton"> -->
-                                        <!-- <a class="dropdown-item" href="#">State</a> -->
-                                    <!-- </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <label for="county-name-input" class="col-form-label"></label>
-                                <div class="dropdown">
-                                    <button
-                                        class="btn btn-secondary dropdown-toggle form-control mb-2 mr-sm-2 co_input_txt"
-                                        type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        County
-                                    </button>
-                                    <div class="dropdown-menu county-dropdown" id=""
-                                        aria-labelledby="dropdownMenuButton"> -->
-                                        <!-- <a class="dropdown-item" href="#">County Name</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                        <!-- FOURTH SELECTION -->
-                        <!-- <div class="form-group row">
-                            <div class="col">
-                                <label for="county-name-input" class="col-form-label"></label>
-                                <div class="dropdown">
-                                    <button
-                                        class="btn btn-secondary dropdown-toggle form-control mb-2 mr-sm-2 co_state_input_txt"
-                                        type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        State
-                                    </button>
-                                    <div class="dropdown-menu co-state-dropdown" id=""
-                                        aria-labelledby="dropdownMenuButton"> -->
-                                        <!-- <a class="dropdown-item" href="#">State</a> -->
-                                    <!-- </div>
-                                </div>
-                            </div>
-                            <div class="col">
-                                <label for="county-name-input" class="col-form-label"></label>
-                                <div class="dropdown">
-                                    <button
-                                        class="btn btn-secondary dropdown-toggle form-control mb-2 mr-sm-2 co_input_txt"
-                                        type="button" id="dropdownMenuButton" data-toggle="dropdown"
-                                        aria-haspopup="true" aria-expanded="false">
-                                        County
-                                    </button>
-                                    <div class="dropdown-menu county-dropdown" id=""
-                                        aria-labelledby="dropdownMenuButton"> -->
-                                        <!-- <a class="dropdown-item" href="#">County Name</a> -->
-                                    <!-- </div>
-                                </div>
-                            </div>
-                        </div> -->
-
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -342,9 +223,6 @@
         </div>
     </div>
 
-
-
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -354,9 +232,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script> -->
     <script src="develop/js/script.js"></script>
 </body>
 
