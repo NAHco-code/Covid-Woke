@@ -15,6 +15,11 @@ Users are able to search specific states and counties for in-depth information a
 
 ### Links
 
+Personal Version
+[DeployedApp](<https://nahco-code.github.io/Covid-Woke-personal-version/>) (GitHub Pages)
+[GitHub Repo](<https://github.com/NAHco-code/Covid-Woke-personal-version.git>)
+
+Original
 [DeployedApp](<https://mkotte.github.io/COVIDwoke>) (GitHub Pages)
 [GitHub Repo](<https://github.com/mkotte/COVIDwoke>)
 
