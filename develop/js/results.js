@@ -35,7 +35,7 @@ function grabCountyInputs() {
 }};
 function grabStateInputs() {
 	for (let i = 0; i < 2; i++) {
-		// saving input values for states into an array then running the grabStateData function using said values
+		// Save input values for states into an array, then run the grabStateData function using said values
 		statesSaved.push(localStorage.getItem('stateItem-' + i));
 		grabStateData(statesSaved[i]);
 	};
@@ -50,26 +50,26 @@ function grabCountyData(stateTarget , countyTarget) {
 		let countyTotalCases = dataObj[0].actuals.cases;
 		let countyTotalDeaths = dataObj[0].actuals.deaths;
 
-		//daily cases per 100k
+		// Daily cases per 100k
 		let countyDailyCases = dataObj[0].actuals.newCases;
 		let countyDailyDeaths = dataObj[0].actuals.newDeaths;
 
-		//infection rate rounded up to hundreths
+		// Infection rate rounded up to hundreths
 		let countyInfectionRate = (dataObj[0].metrics.infectionRate)
 		Number.parseFloat(countyInfectionRate).toFixed(2);
 
-		//population
+		// Population
 		let countyPopulation = dataObj[0].population;
 
 
-		//vaccination stats should display based on population
+		// Vaccination stats should display based on population
 		let countyVaccinesCompleted = dataObj[0].actuals.vaccinationsCompleted;
 		let countyCompletedNum = (((countyVaccinesCompleted) / countyPopulation) * 100).toFixed(1) + '%';
 		let countyVaccinesInitiated = dataObj[0].actuals.vaccinationsInitiated;
 		let countyInitiatedNum = (((countyVaccinesInitiated) / countyPopulation) * 100).toFixed(1) + '%';
 
-		// unused at the moment
-		let countyVaccinesDistributed = dataObj[0].actuals.vaccinesDistributed;
+		// Unused at the moment
+		// let countyVaccinesDistributed = dataObj[0].actuals.vaccinesDistributed;
 
 
 		//ICU beds
