@@ -50,7 +50,6 @@ header div.header_wrapper{
     color: var(--accent-color);
     font-size: 65px;
     font-weight: 500;
-    /* text-shadow: 3px 3px 5px rgba(72, 66, 75, 0.623); */
 }
 
 #woke-header-txt{
@@ -60,7 +59,6 @@ header div.header_wrapper{
     right: 70px;
     font-size: 50px;
     padding-bottom: 10px;
-    /* text-shadow: 3px 3px 5px rgba(72, 66, 75, 0.623); */
 }
 
 main{
@@ -87,9 +85,6 @@ div.mission_wrapper{
     display: flex;
     align-items: center;
     justify-content: center;
-    /* position: relative;
-    top: 5px;
-    right: 75px; */
 }
 
 h1.mission_header{
@@ -110,7 +105,6 @@ h1.mission_header{
     position: relative;
     top: 25px;
     right: 50px;
-
 }
 
 .mission_text{
@@ -136,7 +130,7 @@ div.search_bar_wrapper.row{
     padding: 12px 0 12px 0;
 }
 
-/* submit button */
+/* Submit button */
 .custom-btn{
     background: #089dd8;
     border: 0.5px solid #d6d6d6cc;
@@ -156,7 +150,7 @@ div.search_bar_wrapper.row{
     overflow-y: auto;
 }
 
-/* search button */
+/* Search button */
 .btn-primary{
     background: #089dd8;
     border: 0.5px solid #d6d6d6cc;
@@ -175,7 +169,6 @@ div.search_bar_wrapper.row{
     justify-content: center;
     align-items: center;
     height: auto;
-
 }
 
 .alert-danger{
@@ -231,21 +224,16 @@ div.appreciation_text_wrapper{
 #app_text_top{
     font-size: 50px;
     font-weight: 500;
-    /* position: relative; */
     padding: 6px;
-    /* width: auto; */
 }
 
 #app_text_bottom{
-    /* width: auto; */
     font-weight: 600;
-    /* position: relative;
-    left: 100px; */
     padding: 6px;
     font-size: 52px;
 }
 
-/* footer styling below*/
+/* Footer */
 footer div{
     display: flex;
     flex-direction: row;
@@ -254,7 +242,6 @@ footer div{
 footer div h4{
     color:var(--secondary-txt);
     margin:5px;
-
 }
 
 footer h4{
@@ -281,7 +268,6 @@ footer div a:hover{
 footer div a i{
     font-size: 22px;
     padding:3px;
-
 }
 
 footer div :nth-child(4){
@@ -292,11 +278,11 @@ footer div :nth-child(3){
     margin-right:25px;
 }
 
+/* Media queries */
 @media screen and (max-width: 1660px){
     .mission_text_wrapper{
         position: relative;
         right: 45px;
-
     }
 }
 
@@ -304,7 +290,6 @@ footer div :nth-child(3){
     .mission_text_wrapper{
         position: relative;
         right: 40px;
-
     }
 }
 
@@ -312,7 +297,6 @@ footer div :nth-child(3){
     .mission_text_wrapper{
         position: relative;
         right: 35px;
-
     }
 }
 
@@ -367,7 +351,6 @@ footer div :nth-child(3){
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-
     }
 }
 
@@ -482,7 +465,6 @@ footer div :nth-child(3){
         color: var(--accent-color);
         font-size: 42px;
         font-weight: 500;
-        /* text-shadow: 3px 3px 5px rgba(72, 66, 75, 0.623); */
     }
 }
 
